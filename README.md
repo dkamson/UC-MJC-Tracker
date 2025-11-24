@@ -21,8 +21,8 @@ This tool solves this problem by curating and verifying this data into a single,
 ## How to Run Locally
 1.  Clone this repository:
     ```bash
-    git clone https://github.com/dkamson/UC-MJC-Tracker/tree/main
-    cd uc-mjc-tracker
+    git clone https://github.com/dkamson/UC-MJC-Tracker.git
+    cd UC-MJC-Tracker
     ```
 2.  Create and activate a virtual environment:
     ```bash
