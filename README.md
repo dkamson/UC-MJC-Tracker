@@ -1,39 +1,94 @@
-# UC-MJC Transfer Tracker 🚀
+# UC–MJC Transfer Tracker (Computer Science)
+**Live App:** https://uc-mjc-tracker.streamlit.app/
+A Streamlit web application that helps **Modesto Junior College (MJC)** students track their progress toward transferring to **any University of California (UC)** campus as a Computer Science major.
 
-A Streamlit web app to help Modesto Junior College (MJC) students track their course progress toward transferring to a UC as a Computer Science major.
+This project was inspired by my own experience navigating the fragmented and inconsistent structure of the California transfer system. The goal is simple: make transfer preparation **clear, accurate, and stress-free**.
 
-This project was born from my own experience as an 18-year-old immigrant and CS student at MJC, navigating the complex and fragmented data of the California transfer system.
+---
 
-## The Problem
-The requirements for transferring are spread across multiple, disconnected sources:
-1.  The official UC major requirement pages (e.g., UC Davis).
-2.  The MJC general education catalogs (which are in flux from IGETC to Cal-GETC).
-3.  The ASSIST.org articulation database.
+## 🚀 Version 3 — The “Smart” Refactor
 
-This tool solves this problem by curating and verifying this data into a single, simple, and interactive dashboard.
+Version 3 is a complete architectural overhaul focused on scalability, accuracy, and handling complex UC major preparation requirements.
 
-## V1 MVP Features
-* **Progress Tracking:** A main dashboard with a progress bar and summary metric (`X / Y courses completed`).
-* **Persistent State:** Uses `st.session_state` to save your checked courses in your browser session.
-* **Verified Data Model:** The course database (`course_data.py`) is manually verified using the 2024-2025 MJC IGETC pattern and the official UC Davis CS major-prep articulation agreements.
-* **Clean UI:** All courses are organized into expandable sections in a clean sidebar.
+### ✨ New in V3
 
-## How to Run Locally
-1.  Clone this repository:
+- **Full Multi-Campus Support**  
+  Tracks articulated requirements for all **9 UC campuses**:  
+  *UC Davis, UC Berkeley, UCLA, UC Irvine, UC San Diego, UC Santa Barbara, UC Santa Cruz, UC Riverside, UC Merced.*
+
+- **Smart V3 Data Engine (`course_data.py`)**  
+  A fully structured, extensible dictionary that supports:  
+  - `type: "single"` requirements  
+  - `type: "group"` requirements (e.g., “Choose 2 from this list”)  
+  - Nested groups and “logical” group combinations for complex ASSIST agreements  
+
+- **Dynamic UI Rendering**  
+  The new `app.py` parses the smart database to automatically generate:  
+  - Hierarchical checkboxes  
+  - Grouped requirement sections  
+  - Real-time progress calculations  
+
+- **Dual Plan Support**  
+  Toggle between **IGETC (pre-2025)** and **Cal-GETC (2025+)**.
+
+- **Session Persistence**  
+  Uses `st.session_state` so your course selections remain saved for the entire session.
+
+- **Verified Data Model**  
+  All courses and requirements are manually researched using the official articulation data from **ASSIST.org** for every UC campus.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Python 3**  
+- **Streamlit**  
+- **Custom structured data engine** (Python dictionaries)  
+- **ASSIST.org articulation agreements**
+
+---
+
+## 📦 Running the App Locally
+
+1. **Clone the repository**
     ```bash
-    git clone https://github.com/dkamson/UC-MJC-Tracker.git
-    cd UC-MJC-Tracker
+    git clone https://github.com/YOUR_USERNAME/uc-mjc-tracker.git
+    cd uc-mjc-tracker
     ```
-2.  Create and activate a virtual environment:
+
+2. **Create and activate a virtual environment**
     ```bash
     python -m venv venv
+    # Windows:
+    venv\Scripts\activate
+    # Mac/Linux:
     source venv/bin/activate
     ```
-3.  Install dependencies:
+
+3. **Install dependencies**
     ```bash
     pip install -r requirements.txt
     ```
-4.  Run the app:
+
+4. **Run the app**
     ```bash
     streamlit run app.py
     ```
+
+---
+
+## 🗺️ Roadmap (Upcoming Features)
+
+- Add UCSC BA/BS split logic  
+- Add CSU transfer support  
+- Visual progress bars & completion meters  
+- Export progress to PDF  
+- User accounts (optional future addition)  
+
+---
+
+## 📌 Status
+
+V3 is fully functional with complete UC coverage.  
+Additional polish and features are planned for V4+.
+
