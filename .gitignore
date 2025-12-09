@@ -1,3 +1,7 @@
 venv/
 __pycache__/
 *.pyc
+firebase_key.json
+.streamlit/
+*.log
+.DS_Store

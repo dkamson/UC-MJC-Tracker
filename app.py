@@ -1,10 +1,8 @@
 import streamlit as st
 from course_data import ALL_DATA
-st.set_page_config(
-    page_title="UC-MJC TRansfer Tracker",
-    page_icon="🎓",
-    layout="wide"
-)
+from firebase_utils import initialize_firebase
+from auth import check_authentication, logout, save_progress_to_cloud
+
 def initialize_state():
     if 'initialized' not in st.session_state:
         st.session_state.initialized=True
@@ -31,6 +29,23 @@ def initialize_state():
 
 
 initialize_state()
+
+
+try:
+    db=initialize_firebase()
+    st.sidebar.success('Connected to Cloud Database')
+except Exception as e:
+    st.sidebar.error(f"Failed to connect: {e}")
+
+if not check_authentication():
+    st.stop()
+
+st.set_page_config(
+    page_title="UC-MJC TRansfer Tracker",
+    page_icon="🎓",
+    layout="wide"
+)
+
 
 def calculate_progress(plan_data):
     all_reqs=(
@@ -133,6 +148,13 @@ st.info(f"You are on the {current_plan_data["name"]} plan")
 #Sidebar UI
 st.sidebar.header("My completed courses")
 
+st.sidebar.info(f"Logged in as {st.session_state.user_email}")
+
+if st.sidebar.button("Logout", type="secondary"):
+    logout()
+
+st.sidebar.divider()
+
 
 st.sidebar.selectbox(
     'Select your target university:', 
@@ -162,19 +184,12 @@ render_requirements(req_list=current_plan_data["requirements"]["ge"],
 )
 
 
+st.sidebar.divider()
 
-
-
-
-
-
-
-
-
-
-
-
-
+if st.sidebar.button("💾Save Progress", type="primary"):
+    with st.spinner("Saving..."):
+        save_progress_to_cloud()
+        st.success("Progress saved!")
 
 st.sidebar.divider()
 st.sidebar.markdown('Built by a fellow MJC student')
