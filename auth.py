@@ -62,9 +62,7 @@ def show_login_page():
 
 
     with tab2:
-        st.divider()
-        st.markdown("### Or sign in with Google")
-        st.info("Google sign in coming soon...")
+        
         st.subheader("Create a new account")
         
 
