@@ -3,6 +3,11 @@ from course_data import ALL_DATA
 from firebase_utils import initialize_firebase
 from auth import check_authentication, logout, save_progress_to_cloud
 
+st.set_page_config(
+    page_title="UC-MJC Transfer Tracker",
+    page_icon="🎓",
+    layout="wide"
+)
 def initialize_state():
     if 'initialized' not in st.session_state:
         st.session_state.initialized=True
@@ -40,11 +45,7 @@ except Exception as e:
 if not check_authentication():
     st.stop()
 
-st.set_page_config(
-    page_title="UC-MJC TRansfer Tracker",
-    page_icon="🎓",
-    layout="wide"
-)
+
 
 
 def calculate_progress(plan_data):
@@ -164,7 +165,7 @@ st.sidebar.selectbox(
 )
 
 st.sidebar.radio(
-    "Select your trasnfer plan:",
+    "Select your transfer plan:",
     options=current_uni_data["plans"],
     key="current_plan",
     format_func= lambda key: current_uni_data["plans"][key]["name"]

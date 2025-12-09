@@ -12,8 +12,9 @@ from urllib.parse import quote
 
 
 def show_login_page():
+    
     st.title("UC-MJC Transfer Tracker")
-    st.markdown("Track your Computer Science tranfer")
+    st.markdown("Track your Computer Science transfer")
     
     tab1,tab2=st.tabs(["Login", "Sign up"])
 
@@ -27,7 +28,7 @@ def show_login_page():
             if not login_email or not login_password:
                 st.error("Please fill in both fields")
             else:
-                with st.spinner("Loggin in..."):
+                with st.spinner("Logging in..."):
                     user_data=verify_login_with_rest_api(login_email, login_password)
 
                     if user_data:
@@ -51,7 +52,7 @@ def show_login_page():
 
             if st.button("Send Reset Link", key="reset_button"):
                 if not reset_email:
-                    st.error("Please enter your email adress")
+                    st.error("Please enter your email address")
                 else:
                     with st.spinner("Sending reset email..."):
                         success=send_password_reset_email(reset_email)

@@ -60,7 +60,7 @@ def save_user_progress(user_id, progress_data):
         doc_ref.set(progress_data)
         return True
     except Exception as e:
-        st.error(f"Error savinng progress: {e}")
+        st.error(f"Error saving progress: {e}")
         return False
     
 def load_user_progress(user_id):
@@ -74,7 +74,7 @@ def load_user_progress(user_id):
         else:
             return {}
     except Exception as e:
-        st.error(f"Error loadin progress: {e}")
+        st.error(f"Error loading progress: {e}")
         return {}
     
 def send_password_reset_email(email):
