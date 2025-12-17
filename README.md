@@ -4,7 +4,12 @@
 
 ## Demo Video
 
-[![Watch Demo](https://cdn.loom.com/sessions/thumbnails/dcd17bb9ec864f01bb3da41e789caf8c-with-play.gif)](https://www.loom.com/share/dcd17bb9ec864f01bb3da41e789caf8c)
+
+<div>
+  <a href="https://www.loom.com/share/dcd17bb9ec864f01bb3da41e789caf8c">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/dcd17bb9ec864f01bb3da41e789caf8c-1733534556736-with-play.gif">
+  </a>
+</div>
 
 *Click to watch a demo of the app in action*
 
