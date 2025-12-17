@@ -2,6 +2,14 @@
 
 **🚀 [LIVE APP](https://uc-mjc-tracker.streamlit.app) 🚀**
 
+## Demo Video
+
+[![Watch Demo](https://cdn.loom.com/sessions/thumbnails/dcd17bb9ec864f01bb3da41e789caf8c-with-play.gif)](https://www.loom.com/share/dcd17bb9ec864f01bb3da41e789caf8c)
+
+*Click to watch a demo of the app in action*
+
+
+
 A full-stack web application to help Modesto Junior College (MJC) students track their Computer Science transfer requirements to any UC campus.
 
 Built by a fellow MJC transfer student to solve the problem of fragmented transfer data across ASSIST.org, UC websites, and college catalogs.
